@@ -46,7 +46,7 @@ n * n
   ...
 }
 ```
-### 词法分析
+### 语法分析
 语法分析阶段会把一个令牌流转换成 AST 的形式。 这个阶段会使用令牌中的信息把它们转换成一个 AST 的表述结构，这样更易于后续的操作。
 
 ## 转换
@@ -93,7 +93,7 @@ AST
 
 
 # 参考链接
-![Master the art of the AST and take control of your JS (Yonatan Mevorach)](https://www.youtube.com/watch?v=2W9tUnALrLg)
-![Nicolò Ribaudo — @babel/how-to](https://www.youtube.com/watch?v=UeVq_U5obnE&list=PLOrenGrNapNDS8sK4HChODXmTUcF7O9Z9&index=3)
-![ast.explorer](https://astexplorer.net)
-![babel-handbook](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md)
++ [Master the art of the AST and take control of your JS (Yonatan Mevorach)](https://www.youtube.com/watch?v=2W9tUnALrLg)
++ [Nicolò Ribaudo — @babel/how-to](https://www.youtube.com/watch?v=UeVq_U5obnE&list=PLOrenGrNapNDS8sK4HChODXmTUcF7O9Z9&index=3)
++ [ast.explorer](https://astexplorer.net)
++ [babel-handbook](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md)
