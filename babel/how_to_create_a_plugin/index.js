@@ -1,7 +1,12 @@
 // 1 create a function
 //   babel: 获取babel的API
 //   options: myPlugin的自定义配置
-function myPlugin(babel, options) {
+export default function myPlugin(babel, options) {
+    const {
+        types: t,
+        template
+    } = babel;
+
     return {
         // 2 choose a plugin name
         //   需要遵守 babel-plugin-<plugin-name> 的命名规则
