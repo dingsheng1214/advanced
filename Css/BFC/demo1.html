@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        width: 600px;
+        position: relative;
+    }
+    .left {
+        width: 60px;
+        height: 150px;
+        float: left;
+        background: blue;
+    }
+    .right {
+        height: 200px;
+        background: red;
+        /* BFC区域不会与浮动元素重叠, 而是会依次排列 */
+        overflow: hidden; 
+    }
+</style>
+<body>
+   <div class="left"></div> 
+   <div class="right"></div>
+</body>
+</html>
