@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root {
+        --bg: white;
+        --text-color: #555;
+        --link-color: #639a67;
+        --link-hover-color: #4a5c4a;
+    }
+    .pink-theme{
+        --bg: hotpink;
+        --text-color: white;
+        --link-color: blue;
+        --link-hover-color: #3532A7;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text-color);
+    }
+    a, a:link {
+        color: var(--link-color);
+    }
+    a:hover {
+        color: var(--link-hover-color);
+    }
+</style>
+<body>
+    <button id="toggle">toggle</button>
+   <a href="">hello world</a> 
+   <script>
+       const toggle = document.getElementById('toggle')
+         toggle.addEventListener('click',function(){
+              document.body.classList.toggle('pink-theme')
+         })
+   </script>
+</body>
+</html>
