@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{stage}}
+    <h1>{{stage}}平台课程：{{course.title}}</h1>
+    <p>{{course.title}}是{{course.author}}发布的课程</p>
+    <p>发布时间为{{course.publishTime}}</p>
+    <input type="text" v-model="inputData" />
+  </div> 
+  <script>
+    let data = {
+      inputData: 'hello world',
+      stage: 'gitchat',
+      course: {
+        title: 'Vue.js入门',
+        author: 'gitchat',
+        publishTime: '2018-01-01'
+      }
+    }
+
+    compile(document.getElementById('app'), data)
+
+    function compile(el, data) {
+      let fragment = document.createDocumentFragment()
+
+      while (child = el.firstChild) {
+        // appendChild具有移植性，将el中的node移动到fragment中
+        fragment.appendChild(child)
+      }
+
+      replace(fragment)
+
+      document.getElementById('app').appendChild(fragment)
+    }
+
+    function replace(fragment) {
+      const reg = /\{\{(.*?)\}\}/g
+      Array.from(fragment.childNodes).forEach(node => {
+
+        // {{}} 使用正则+遍历 替换插值表达式
+        let textContent = node.textContent
+        if (node.nodeType === 3 && reg.test(node.textContent)) {
+          node.textContent = textContent.replace(reg, (match, placeholder) => {
+            const result = placeholder.split('.').reduce((prev, key) => {
+              return prev[key]
+            }, data)
+            return result
+          })
+        }
+
+        // v-model双向绑定
+        if (node.nodeType === 1) {
+          console.log(node.nodeName, node.attributes);
+
+          let attributes = Array.from(node.attributes)
+          attributes.forEach(attr => {
+            let { name, value } = attr
+            if (name === 'v-model') {
+              node.value = data[value]
+              node.addEventListener('input', e => {
+                data[value] = e.target.value
+                console.log(data);
+              })
+            }
+          })
+        }
+
+        // 如果当前节点有子节点，则递归替换
+        if (node.childNodes && node.childNodes.length) {
+          replace(node)
+        }
+      })
+    }
+
+  </script>
+</body>
+</html>
