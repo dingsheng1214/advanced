@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="inputId" />
+    <button id="btn">请求</button>
+    <script>
+      function throttle(fn, delay = 10000) {
+        let valid = true
+        return function () {
+          console.log('throttle')
+          if (valid) {
+            setTimeout(() => {
+              fn.apply(this, arguments)
+              valid = true
+            }, delay)
+          }
+          valid = false
+        }
+      }
+      const btn = document.getElementById('btn')
+      const onClick = function (e) {
+        console.log('onClick')
+      }
+
+      btn.onclick = throttle(onClick)
+    </script>
+  </body>
+</html>
