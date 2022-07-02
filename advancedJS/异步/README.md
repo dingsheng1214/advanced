@@ -1,5 +1,4 @@
 # Event Loop
-
 ![](./assets/event_loop1.jpg)
 + `Call Stack`: 调用栈，先进后出。方法执行时入栈，执行完毕出栈。
 + `Memory Heap`: 堆内存，用于存放对象。
@@ -18,7 +17,6 @@
     + Promise().then(`function() {}`)
     + queueMicrotask
 + `Event Loop`: 事件轮询，用于连接call stack和 queue。
-
 ## even loop执行原理
 1. 同步任务先执行，按顺序在 `call stack`中出栈入栈
 2. 当`call stack`为空时，`event loop`开始异步任务的轮询
@@ -35,3 +33,17 @@ baz();
 ```
 ![](assets/event_loop2.gif)
 ![](assets/event_loop3.webp)
+
+# 异步编程的解决方案
+1. 回调
+   1. 可读性
+   2. 回调地狱
+   3. 可靠性丢失
+2. 发布/订阅
+
+    ![发布订阅](./assets/pubsub.jpg)
+3. Promise
+4. Generator
+5. async/await
+
+最终  的目的：`以同步的方式实现异步编程`
