@@ -16,15 +16,15 @@
 +-------------------------+              +---------------------------+
 |                         |              |+ factoryMethod(): Product |
 +-------------------------+              +---------------------------+
-            ^
-            |
-            |
-            |
-            |
+            ^                                          ^
+            |                                          |
+          extends                                  implements
+            |                                          |
+            |                                          |
 +-------------------------+              +---------------------------+
 |      Child Product      |              |        ChildFactory       |
 +-------------------------+              +---------------------------+
-|                         |              |                           |
+|                         |<-------------|                           |
 +-------------------------+              +---------------------------+
 |                         |              |+ factoryMethod(): Product |
 +-------------------------+              +---------------------------+
@@ -45,7 +45,7 @@ abstract class Popup {
 }
 // 指定弹框工厂的抽象标准
 interface PopupFactory {
-  create(content: string, color: string): Popup;
+  create(content: string, color: string): Popup
 }
 
 class InfoPopup extends Popup {
@@ -53,7 +53,7 @@ class InfoPopup extends Popup {
     super(content, color)
   }
   show() {
-    console.log(`InfoPopup: ${this.content} ${this.color}`);
+    console.log(`InfoPopup: ${this.content} ${this.color}`)
   }
 }
 class InfoPopupFactory implements PopupFactory {
@@ -63,7 +63,7 @@ class InfoPopupFactory implements PopupFactory {
 }
 const factory = new InfoPopupFactory()
 const infoPopup = factory.create('info', 'red')
-infoPopup.show();
+infoPopup.show()
 
 // ! 此时需要新增一种 success 弹框方式, 在不需要修改原有代码的基础上，只需两步即可实现
 // ? 1 创建一个 SuccessPopup类 继承 Popup
@@ -72,7 +72,7 @@ class SuccessPopup extends Popup {
     super(content, color)
   }
   show() {
-    console.log(`SuccessPopup: ${this.content} ${this.color}`);
+    console.log(`SuccessPopup: ${this.content} ${this.color}`)
   }
 }
 // ? 2 创建一个 SuccessPopupFactory 类 实现 PopupFactory
@@ -84,4 +84,4 @@ class SuccessPopupFactory implements PopupFactory {
 
 const successFactory = new SuccessPopupFactory()
 const successPopup = successFactory.create('success', 'green')
-successPopup.show();
+successPopup.show()
