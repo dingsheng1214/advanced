@@ -11,8 +11,9 @@
   + 工厂模式-大量创建对象
     + ![](assets/create_factory.jpg)
   + 单例模式-全局只能有我一个
+    + ![](assets/create_singleton.jpg)
+  + 建造者模式-按细分步骤组合对象
     + ![](assets/create_builder.jpg)
-  + 建造者模式-精细化组合对象
   + 原型模式-JavaScript的灵魂
 + 结构型：帮助我们优雅的设计代码结构
   + 外观模式-给你的一个套餐
