@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input type="file" name="file" id="file">
+    <button type="submit" onclick="submit()">提交</button>
+  </div>
+
+  <script>
+    let upload = {}
+    document.getElementById('file').onchange = function () {
+      const file = this.files[0];
+      upload.data = file
+      upload.name = file.name
+    };
+    function submit() {
+      const formdata = new FormData()
+      formdata.append('file', upload.data)
+      formdata.append('name', upload.name)
+      fetch('/submit/blob', {
+        method: 'POST',
+        body: formdata,
+        headers: {
+          // 'Content-Type': 'multipart/form-data'
+        }
+      }).then(res => res.json()).then(res => {
+        console.log(res);
+      });
+    }
+  </script>
+</body>
+</html>
