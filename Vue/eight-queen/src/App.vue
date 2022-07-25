@@ -2,15 +2,19 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <eight-queen />
+    <life-cycle />
   </div>
 </template>
 
 <script>
-import EightQueen from './components/EightQueen.vue'
+import EightQueen from './components/EightQueen'
+import LifeCycle from './components/lifecycle/LifeCycle'
+
 export default {
   name: 'App',
   components: {
-    EightQueen
+    EightQueen,
+    LifeCycle
   }
 }
 </script>
