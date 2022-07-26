@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import CustomComponentVModel from './components/customComponentVModel/index.vue'
+import CustomComponentVModel from './components/customComponent/vModel/index'
 import VResize from './components/directive/vResize'
 import LifeCycle from './components/lifecycle/LifeCycle'
 export default {
