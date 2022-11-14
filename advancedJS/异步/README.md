@@ -35,15 +35,15 @@ baz();
 ![](assets/event_loop3.webp)
 
 # 异步编程的解决方案
-1. 回调
+1. 回调 ---> 嵌套调用
    1. 可读性
    2. 回调地狱
    3. 可靠性丢失
 2. 发布/订阅
 
     ![发布订阅](./assets/pubsub.jpg)
-3. Promise
+3. Promise  ---> 链式调用
 4. Generator
-5. async/await
+5. async/await ---> 顺序调用
 
 最终  的目的：`以同步的方式实现异步编程`
