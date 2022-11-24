@@ -7,7 +7,7 @@
         :value="item.id"
         :selected="item.id === selected"
       >
-        {{item.name}}
+        {{ item.name }}
       </option>
     </select>
   </div>
@@ -17,18 +17,16 @@
 export default {
   model: {
     prop: 'selected',
-    event: 'change'
+    event: 'change',
   },
   props: ['list', 'selected'],
   methods: {
     select(e) {
-      console.log('child change', e.target.value);
-      this.$emit('change', e.target.value);
-    }
-  }
+      console.log('child change', e.target.value)
+      this.$emit('change', e.target.value)
+    },
+  },
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
