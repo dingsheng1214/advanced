@@ -6,6 +6,7 @@ import NextTick from './components/AdvancedFeatures/nextTick'
 import Slot from './components/AdvancedFeatures/slot'
 import Async from './components/AdvancedFeatures/async'
 import KeepAlive from './components/AdvancedFeatures/KeepAlive'
+import MixIn from './components/AdvancedFeatures/mixin'
 import VResize from './components/directive/vResize'
 import LifeCycle from './components/lifecycle/LifeCycle'
 import Communication from './components/communication'
@@ -19,6 +20,7 @@ const routes = [
   {path: '/ad-slot', component: Slot},
   {path: '/ad-async', component: Async},
   {path: '/ad-keepalive', component: KeepAlive},
+  {path: '/ad-mixin', component: MixIn},
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置

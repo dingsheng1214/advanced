@@ -11,6 +11,7 @@
         <router-link to="/ad-slot">vue高级特性-slot</router-link>
         <router-link to="/ad-async">vue高级特性-异步组件</router-link>
         <router-link to="/ad-keepalive">vue高级特性-keepalive</router-link>
+        <router-link to="/ad-mixin">vue高级特性-mixin</router-link>
       </div>
       <div id="right">
         <router-view></router-view>
