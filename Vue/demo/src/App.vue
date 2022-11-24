@@ -6,6 +6,7 @@
         <router-link to="/lifeCycle">生命周期</router-link>
         <router-link to="/customComponent">自定义组件</router-link>
         <router-link to="/customDirective">自定义指令</router-link>
+        <router-link to="/communication">组件间通信</router-link>
       </div>
       <div id="right">
         <router-view></router-view>

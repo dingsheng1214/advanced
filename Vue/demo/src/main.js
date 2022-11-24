@@ -4,11 +4,13 @@ import VueRouter from 'vue-router'
 import CustomComponentVModel from './components/customComponent/vModel/index'
 import VResize from './components/directive/vResize'
 import LifeCycle from './components/lifecycle/LifeCycle'
+import Communication from './components/communication'
 
 const routes = [
   {path: '/lifecycle', component: LifeCycle},
   {path: '/customComponent', component: CustomComponentVModel},
   {path: '/customDirective', component: VResize},
+  {path: '/communication', component: Communication},
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置
