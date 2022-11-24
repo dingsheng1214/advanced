@@ -9,6 +9,7 @@
         <router-link to="/ad-vmodel">vue高级特性-v-model</router-link>
         <router-link to="/ad-nextTick">vue高级特性-$nextTick</router-link>
         <router-link to="/ad-slot">vue高级特性-slot</router-link>
+        <router-link to="/ad-async">vue高级特性-异步组件</router-link>
       </div>
       <div id="right">
         <router-view></router-view>
