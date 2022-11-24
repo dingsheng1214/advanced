@@ -3,6 +3,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import vModel from './components/AdvancedFeatures/vModel'
 import NextTick from './components/AdvancedFeatures/nextTick'
+import Slot from './components/AdvancedFeatures/slot'
 import VResize from './components/directive/vResize'
 import LifeCycle from './components/lifecycle/LifeCycle'
 import Communication from './components/communication'
@@ -13,6 +14,7 @@ const routes = [
   {path: '/communication', component: Communication},
   {path: '/ad-vmodel', component: vModel},
   {path: '/ad-nextTick', component: NextTick},
+  {path: '/ad-slot', component: Slot},
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置

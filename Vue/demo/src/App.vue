@@ -8,6 +8,7 @@
         <router-link to="/communication">组件间通信</router-link>
         <router-link to="/ad-vmodel">vue高级特性-v-model</router-link>
         <router-link to="/ad-nextTick">vue高级特性-$nextTick</router-link>
+        <router-link to="/ad-slot">vue高级特性-slot</router-link>
       </div>
       <div id="right">
         <router-view></router-view>
