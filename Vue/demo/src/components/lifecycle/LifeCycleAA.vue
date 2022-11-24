@@ -1,17 +1,18 @@
 <template>
-  <div style="border: 1px solid blue">
-    LifeCycleA {{ test }}
+  <div style="border: 1px solid red; width: 200px">
+    LifeCycleAA {{ test }}
+    <p>{{ initVal }}</p>
     <input type="number" v-model="test" ref="input" />
-    <l-aa :init-val="test" />
   </div>
 </template>
 
 <script>
-import LifeCycleAA from './LifeCycleAA.vue'
 const {group, groupEnd, log} = console
 export default {
-  components: {
-    'l-aa': LifeCycleAA,
+  props: {
+    initVal: {
+      type: Number,
+    },
   },
   data() {
     return {
@@ -27,8 +28,8 @@ export default {
     getOne() {},
   },
   beforeCreate() {
-    group('=== 初始化 ===')
-    log('--- beforeCreate ---')
+    group('=== 初始化AA ===')
+    log('--- beforeCreateAA ---')
 
     log(`[data:test] ${this.test}`)
     log(`[computed:bontest] ${this.bontest}`)
@@ -38,7 +39,7 @@ export default {
     log(``)
   },
   created() {
-    log('--- created ---')
+    log('--- createdAA ---')
 
     // data, computed, methods 可以在 created 中使用
     log(`[data:test] ${this.test}`)
@@ -50,8 +51,8 @@ export default {
     groupEnd()
   },
   beforeMount() {
-    group('=== 挂载 ===')
-    log('--- beforeMount ---')
+    group('=== 挂载AA ===')
+    log('--- beforeMountAA ---')
 
     log(`[data:test] ${this.test}`)
     log(`[computed:bontest] ${this.bontest}`)
@@ -59,7 +60,7 @@ export default {
     log(`[ref:input] ${this.$refs.input}`)
   },
   mounted() {
-    log('--- mounted ---')
+    log('--- mountedAA ---')
 
     // ref 可以在 mounted 中使用
     log(`[data:test] ${this.test}`)
@@ -69,8 +70,8 @@ export default {
     groupEnd()
   },
   beforeUpdate() {
-    group('=== 模板更新 ===')
-    log('--- beforeUpdate ---')
+    group('=== 模板更新AA ===')
+    log('--- beforeUpdateAA ---')
 
     log(`[data:test] ${this.test}`)
     log(`[computed:bontest] ${this.bontest}`)
@@ -78,7 +79,7 @@ export default {
     log(`[ref:input] ${this.$refs.input}`)
   },
   updated() {
-    log('--- updated ---')
+    log('--- updatedAA ---')
 
     log(`[data:test] ${this.test}`)
     log(`[computed:bontest] ${this.bontest}`)
@@ -87,19 +88,19 @@ export default {
     groupEnd()
   },
   activated() {
-    group('=== keepAlive激活 ===')
-    log('--- activated ---')
+    group('=== keepAlive激活AA ===')
+    log('--- activatedAA ---')
   },
   deactivated() {
-    log('--- deactivated ---')
+    log('--- deactivatedAA ---')
     groupEnd()
   },
   beforeDestroy() {
-    group('=== 卸载 ===')
-    log('--- beforeDestroy ---')
+    group('=== 卸载AA ===')
+    log('--- beforeDestroyAA ---')
   },
   destroyed() {
-    log('--- destroyed ---')
+    log('--- destroyedAA ---')
     groupEnd()
   },
 }

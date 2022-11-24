@@ -1,23 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <life-cycle />
-    <v-resize />
-    <custom-component-v-model />
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <div id="container">
+      <div id="left">
+        <router-link to="/lifeCycle">生命周期</router-link>
+        <router-link to="/customComponent">自定义组件</router-link>
+        <router-link to="/customDirective">自定义指令</router-link>
+      </div>
+      <div id="right">
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import CustomComponentVModel from './components/customComponent/vModel/index'
-import VResize from './components/directive/vResize'
-import LifeCycle from './components/lifecycle/LifeCycle'
 export default {
   name: 'App',
-  components: {
-    LifeCycle,
-    VResize,
-    CustomComponentVModel
-}
 }
 </script>
 
@@ -29,5 +28,16 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+#container {
+  display: flex;
+}
+#left {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+}
+#right {
+  flex-grow: 1;
 }
 </style>
