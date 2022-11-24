@@ -5,6 +5,7 @@ import vModel from './components/AdvancedFeatures/vModel'
 import NextTick from './components/AdvancedFeatures/nextTick'
 import Slot from './components/AdvancedFeatures/slot'
 import Async from './components/AdvancedFeatures/async'
+import KeepAlive from './components/AdvancedFeatures/KeepAlive'
 import VResize from './components/directive/vResize'
 import LifeCycle from './components/lifecycle/LifeCycle'
 import Communication from './components/communication'
@@ -17,6 +18,7 @@ const routes = [
   {path: '/ad-nextTick', component: NextTick},
   {path: '/ad-slot', component: Slot},
   {path: '/ad-async', component: Async},
+  {path: '/ad-keepalive', component: KeepAlive},
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置
